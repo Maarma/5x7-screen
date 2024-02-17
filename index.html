@@ -11,14 +11,9 @@
         <table id="game-board"></table>
     </div>
     <script type="module" src="app.js">
-        const totalScore = document.getElementById("score");
-        var score = 0;
-        const addScore = () => {
-            score++;
-            totalScore.innerHTML = score;
-        }
     </script>
-    <button type="button" onClick ="addScore()" id="push"> PLUSS </button>
-    <div id="score"></div>
+    <button type="button" id="homePlus1"> PLUSS </button>
+    <div id="homeScore"></div>
+    <button type="button" id="homeMinus1"> Miinus </button>
 </body>
 </html>
