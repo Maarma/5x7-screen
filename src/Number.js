@@ -16,8 +16,8 @@ class Number {
             
         }
         return coordinates;
-        console.log(this.coordinates)
-        return this.coordinates;
+        //console.log(this.coordinates)
+        //return this.coordinates;
     }
 }
 
