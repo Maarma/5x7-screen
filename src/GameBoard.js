@@ -24,7 +24,7 @@ class GameBoard {
                 }
 
                 rowTr.append(cellTd);
-                console.log(id);
+                //console.log(id);
             }
     
             this.gameBoardTable.append(rowTr);
