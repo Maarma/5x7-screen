@@ -2,18 +2,24 @@ class Number {
 
     coordinates = []
     
-    getCoordinates () {
+    getCoordinates ()
+    {
 
         const coordinates = []
-        let zero = [0,1,2,3,4,5,6];
+        let zero = [14, 17, 17, 17, 17, 17, 14];
+        let testNumbers = [16, 8, 4, 2, 1]
 
-        for (let i = 0; i < 7; i++){
+        for (let i = 0; i < 7; i++)
+        {
             let x = zero[i];
-            //console.log(x);
-            //console.log(i + '-' + x);
-            //console.log(coordinates)
-            coordinates.push(i + '-' + x);
-            
+            for (let j = 0; j < 5; j++)
+            {
+                if (x >= testNumbers[j])
+                {
+                    x = x - testNumbers[j];
+                    coordinates.push(i + '-' + j);
+                }
+            }
         }
         return coordinates;
         //console.log(this.coordinates)
