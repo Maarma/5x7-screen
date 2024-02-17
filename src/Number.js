@@ -1,14 +1,17 @@
 class Number {
 
-    coordinates = ['0-2', '0-3', '0-4',
-        '1-1','1-5',
-        '2-1','2-5',
-        '3-1','3-5',
-        '4-1','4-5',
-        '5-1','5-5',
-        '6-2','6-3','6-4']
+    
+    
+    coordinates = [];
+    
 
     getCoordinates () {
+       
+        let zero = [0,1,2,3,4,5]
+        for (let i = 0; i < 6; i++){
+            let x = zero[i];
+            coordinates.push(i,'-',x);
+        }
         return this.coordinates;
     }
 }
