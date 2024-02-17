@@ -9,6 +9,7 @@ class Number {
         '6-2','6-3','6-4']
 
     getCoordinates () {
+        console.log(this.coordinates);
         return this.coordinates;
     }
 }
