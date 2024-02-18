@@ -19,21 +19,18 @@ class Number {
         }
 
         // siit vahelt kätte saada skoor kuidagi
-
+        var score = 0;
         const homeScore = document.getElementById("homeScore");
-        const innerTextOutput = document.getElementById("homeScore");
-        const source = document.getElementById("homeScore");
-        const textContentOutput = document.getElementById("homeScore");       
+        setInterval(function()
+        {
+            score = homeScore.innerHTML;
+            console.log(score);
+        }, 1000);
         
-        textContentOutput.value = source.textContent;
-        innerTextOutput.value = source.innerText;
-
-        let score = homeScore.innerText;
-        console.log(innerTextOutput);
         const coordinates = [];
 
         // ja siis panna zero vöörtusesse dictionarist vastava nr väärtus
-        let zero = [14, 17, 17, 17, 17, 17, 14];
+        let zero = [14, 17, 17, 15, 1, 17, 14];
        
         let testNumbers = [16, 8, 4, 2, 1]
 
@@ -53,6 +50,7 @@ class Number {
         //console.log(this.coordinates)
         //return this.coordinates;
     }
+    
 }
 
 export { Number }
