@@ -1,17 +1,81 @@
+
 class Number {
+    
+    coordinates = []
+    
+    getCoordinates ()
+    {
+        var dict = {
+            0: [14, 17, 17, 17, 17, 17, 14],
+            1: [4, 12, 4, 4, 4, 4, 14],
+            2: [14, 17, 1, 2, 4, 8, 31],
+            3: [14, 1, 1, 14, 1, 1, 14],
+            4: [17, 17, 17, 14, 1 , 1 ,1],
+            5: [31, 16, 16, 30, 1, 1, 30],
+            6: [14, 16, 16, 30, 17, 17, 14],
+            7: [31, 1, 1, 2, 4, 4, 4],
+            8: [14, 17, 17, 14, 17, 17, 14],
+            9: [14, 17, 17, 15, 1, 17, 14]
+        }
 
-    coordinates = ['0-2', '0-3', '0-4',
-        '1-1','1-5',
-        '2-1','2-5',
-        '3-1','3-5',
-        '4-1','4-5',
-        '5-1','5-5',
-        '6-2','6-3','6-4']
+        var trans = [[14, 17, 17, 17, 17, 17, 14], [4, 12, 4, 4, 4, 4, 14], 
+        [14, 17, 1, 2, 4, 8, 31], [14, 1, 1, 14, 1, 1, 14], [17, 17, 17, 14, 1 , 1 ,1], [31, 16, 16, 30, 1, 1, 30],
+        [14, 16, 16, 30, 17, 17, 14], [31, 1, 1, 2, 4, 4, 4], [14, 17, 17, 14, 17, 17, 14], [14, 17, 17, 15, 1, 17, 14]]
 
-    getCoordinates () {
-        console.log(this.coordinates);
-        return this.coordinates;
+        // siit vahelt kätte saada skoor kuidagi
+        var hScore = 0;
+        const homeScore = document.getElementById("homeScore");
+        setInterval(function()
+        {
+            hScore = homeScore.innerHTML;
+            //let one = hScore % 10;
+            //let ten = Math.floor(hScore /10 ) % 10;
+            //let hTens = trans[ten];
+            //let hOnes = trans[one];
+            console.log(hScore);
+        }, 1000);
+        //hScore = homeScore.innerHTML;
+        let one = hScore % 10;
+        let ten = Math.floor(hScore /10 ) % 10;
+        let hTens = trans[ten];
+        let hOnes = trans[one];
+        const coordinates = [];
+        
+        // ja siis panna zero vöörtusesse dictionarist vastava nr väärtus
+        
+        let testNumbers = [16, 8, 4, 2, 1]
+        // kymneliste kuvamine
+        for (let i = 0; i < 7; i++)
+        {
+            let x = hTens[i];
+            for (let j = 0; j < 5; j++)
+            {
+                if (x >= testNumbers[j])
+                {
+                    x = x - testNumbers[j];
+                    coordinates.push(i + '-' + j);
+                }
+            }
+        }
+        // yheliste kuvamine
+        for (let i = 0; i < 7; i++)
+        {
+            let x = hOnes[i];
+            for (let j = 0; j < 5; j++)
+            {
+                if (x >= testNumbers[j])
+                {
+                    x = x - testNumbers[j];
+                    coordinates.push(i + '-' + (j+6));
+                }
+            }
+        }
+        
+        return coordinates;
+        //console.log(this.coordinates)
+        //return this.coordinates;
     }
+    
 }
 
 export { Number }
