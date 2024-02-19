@@ -31,6 +31,6 @@ class GameBoard {
             this.gameBoardTable.append(rowTr);
         }
     }
-}
+};
 
 export { GameBoard };
