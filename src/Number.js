@@ -19,24 +19,28 @@ class Number {
         }
 
         // siit vahelt kätte saada skoor kuidagi
-        var score = 0;
+        var hScore = 0;
         const homeScore = document.getElementById("homeScore");
         setInterval(function()
         {
-            score = homeScore.innerHTML;
-            console.log(score);
+            hScore = homeScore.innerHTML;
+            //console.log(hScore);
+            let one = hScore % 10;
+            let ten = Math.floor(hScore /10 ) % 10;
+            console.log(ten);
+            console.log(one);
         }, 1000);
         
         const coordinates = [];
 
         // ja siis panna zero vöörtusesse dictionarist vastava nr väärtus
-        let zero = [14, 17, 17, 15, 1, 17, 14];
-       
+        let hTens = [14, 17, 1, 2, 4, 8, 31];
+        let hOnes = [14, 1, 1, 14, 1, 1, 14];
         let testNumbers = [16, 8, 4, 2, 1]
-
+        // kymneliste kuvamine
         for (let i = 0; i < 7; i++)
         {
-            let x = zero[i];
+            let x = hTens[i];
             for (let j = 0; j < 5; j++)
             {
                 if (x >= testNumbers[j])
@@ -46,6 +50,20 @@ class Number {
                 }
             }
         }
+        // yheliste kuvamine
+        for (let i = 0; i < 7; i++)
+        {
+            let x = hOnes[i];
+            for (let j = 0; j < 5; j++)
+            {
+                if (x >= testNumbers[j])
+                {
+                    x = x - testNumbers[j];
+                    coordinates.push(i + '-' + (j+6));
+                }
+            }
+        }
+
         return coordinates;
         //console.log(this.coordinates)
         //return this.coordinates;

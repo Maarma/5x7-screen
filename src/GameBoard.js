@@ -3,17 +3,18 @@ class GameBoard {
     gameBoardTable = document.getElementById('game-board');
     boardSize;
 
-    constructor ( boardSize) {
-        this.boardSize = boardSize;
+    constructor ( boardSizeX, boardSizeY) {
+        this.boardSizeX = boardSizeX;
+        this.boardSizeY = boardSizeY;
     }
 
     draw ( numberCoordinates ) {
 
-        for ( let i=0; i < this.boardSize; i++) {
+        for ( let i=0; i < this.boardSizeY; i++) {
 
             const rowTr = document.createElement('tr');
 
-            for ( let j=0; j < this.boardSize; j++) {
+            for ( let j=0; j < this.boardSizeX; j++) {
 
                 const cellTd = document.createElement('td');
                 const id = i + '-' + j;
