@@ -32,14 +32,13 @@ class Number {
             //let ten = Math.floor(hScore /10 ) % 10;
             //let hTens = trans[ten];
             //let hOnes = trans[one];
-            return hScore;
+            console.log(hScore);
         }, 1000);
         //hScore = homeScore.innerHTML;
         let one = hScore % 10;
         let ten = Math.floor(hScore /10 ) % 10;
         let hTens = trans[ten];
         let hOnes = trans[one];
-        console.log(hScore);
         const coordinates = [];
         
         // ja siis panna zero vöörtusesse dictionarist vastava nr väärtus
@@ -71,7 +70,7 @@ class Number {
                 }
             }
         }
-
+        
         return coordinates;
         //console.log(this.coordinates)
         //return this.coordinates;

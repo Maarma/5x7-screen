@@ -7,7 +7,7 @@ class GameBoard {
         this.boardSizeX = boardSizeX;
         this.boardSizeY = boardSizeY;
     }
-
+    
     draw ( numberCoordinates ) {
 
         for ( let i=0; i < this.boardSizeY; i++) {
