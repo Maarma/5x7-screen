@@ -10,6 +10,8 @@ class GameBoard {
     
     draw ( numberCoordinates ) {
 
+        this.gameBoardTable.innerHTML = '';
+
         for ( let i=0; i < this.boardSizeY; i++) {
 
             const rowTr = document.createElement('tr');
